@@ -122,20 +122,4 @@ document.getElementById('submit').addEventListener('click', function() {
 			contrastTable.removeAttribute('style');
 		}
 	}
-	
-	// 
-	// for (key in contrasts) {
-	// 	let cell = document.getElementById(key),
-	// 		value = cell.getElementsByClassName('value')[0],
-	// 		swatch = cell.getElementsByClassName('swatch')[0]
-	// 	;
-	// 	value.innerHTML = '';
-	// 	swatch.removeAttribute('style');
-	// 	if (contrasts[key] !== false) {
-	// 		value.innerHTML = contrasts[key];
-	// 		swatch.style.backgroundColor = contrasts[key];
-	// 	} else {
-	// 		value.innerHTML = 'n/a';
-	// 	}
-	// }
 });
