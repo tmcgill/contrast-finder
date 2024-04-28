@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="description" content="Identifies contrasting colors"/>
+	<title>Contrast finder</title>
+	
+	<link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+	<h1>Contrast finder</h1>
+	
+	<form>
+		<fieldset id="colorA" class="color">
+			<legend id="label0">Color A</legend>
+			<div class="block-group">
+				<label for="picker0">Color picker</label>
+				<input id="picker0" type="color" value="#000000"/>
+			</div>
+			<div class="block-group">
+				<label for="hex0">Hex</label>
+				<input id="hex0" maxlength="7" value="#000000"/>
+			</div>
+			<div class="block-group">
+				<div class="inline-group">
+					<label for="hue0">Hue</label>
+					<input id="hue0" type="number" min="0" max="360" step=".1" value="0"/>
+				</div>
+				<div class="inline-group">
+					<label for="saturation0">Saturation</label>
+					<input id="saturation0" type="number" min="0" max="100" step=".1" value="0"/>%
+				</div>
+				<div class="inline-group">
+					<label for="lightness0">Lightness</label>
+					<input id="lightness0" type="number" min="0" max="100" step=".1" value="0"/>%
+				</div>
+			</div>
+			<div class="block-group">
+				<label for="slider0">Lighness adjustment</label>
+				<input id="slider0" class="slider" type="range" min="0" max="100" step=".1" value="0"/>
+			</div>
+		</fieldset>
+		
+		<fieldset id="colorB" class="color">
+			<legend id="label1">Color B</legend>
+			<div class="block-group">
+				<label for="picker1">Color picker</label>
+				<input id="picker1" type="color" value="#000000"/>
+			</div>
+			<div class="block-group">
+				<label for="hex1">Hex</label>
+				<input id="hex1" maxlength="7" value="#000000"/>
+			</div>
+			<div class="block-group">
+				<div class="inline-group">
+					<label for="hue1">Hue</label>
+					<input id="hue1" type="number" min="0" max="360" step=".1" value="0"/>
+				</div>
+				<div class="inline-group">
+					<label for="saturation1">Saturation</label>
+					<input id="saturation1" type="number" min="0" max="100" step=".1" value="0"/>%
+				</div>
+				<div class="inline-group">
+					<label for="lightness1">Lightness</label>
+					<input id="lightness1" type="number" min="0" max="100" step=".1" value="0"/>%
+				</div>
+			</div>
+			<div class="block-group">
+				<label for="slider1">Lighness adjustment</label>
+				<input id="slider1" class="slider" type="range" min="0" max="100" step=".1" value="0"/>
+			</div>
+		</fieldset>
+		
+		<fieldset id="process">
+			<legend>Color adjustment process</legend>
+			<input id="process_single" name="process" type="radio" value="single" checked="checked"/>
+			<label for="process_single" name="process">Adjust color B only</label>
+			<br/>
+			<input id="process_dual" name="process" type="radio" value="dual"/>
+			<label for="process_dual">Adjust colors A and B evenly</label>
+		</fieldset>
+		
+		<button id="submit" type="submit">Find contrasting colors</button>
+	</form>
+	
+	<table id="contrastTable" style="display:none;">
+		<thead>
+			<tr>
+				<th scope="col">Ratio</th>
+				<th scope="col">Color A</th>
+				<th scope="col">Color B</th>
+				<th scope="col">Adjustment direction</th>
+			</tr>
+		</thead>
+		<tbody id="contrastData">
+		</tbody>
+	</table>
+</body>
+
+<script src="conversions.js"></script>
+<script src="luminance.js"></script>
+<script src="contrast.js"></script>
+<script src="findContrast.js"></script>
+<script src="ui.js"></script>
+<script>
+</script>
+
+</html>
